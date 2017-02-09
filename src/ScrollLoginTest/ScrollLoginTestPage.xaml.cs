@@ -1,4 +1,6 @@
-﻿using Xamarin.Forms;
+﻿using System;
+
+using Xamarin.Forms;
 
 namespace ScrollLoginTest
 {
@@ -7,7 +9,21 @@ namespace ScrollLoginTest
         public ScrollLoginTestPage()
         {
             InitializeComponent();
-            LoginButton.Clicked += (sender, e) => DisplayAlert("Button Clicked", "Button Clicked", "Ok");
+			LoginButton.Clicked += HandleLoginButtonClicked;
+
+			Server.ReturnType = ReturnType.Next;
+			Server.ReturnCommand = new Command(() => UserName.Focus());
+
+			UserName.ReturnType = ReturnType.Next;
+			UserName.ReturnCommand = new Command(() => Password.Focus());
+
+			Password.ReturnType = ReturnType.Go;
+			Password.ReturnCommand = new Command(() => HandleLoginButtonClicked(null, EventArgs.Empty));
         }
+
+		void HandleLoginButtonClicked(object sender, EventArgs e)
+		{
+			DisplayAlert("Button Clicked", "Button Clicked", "Ok");
+		}
     }
 }
