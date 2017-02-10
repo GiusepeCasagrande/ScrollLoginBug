@@ -5,7 +5,7 @@
 			xmlns:local="clr-namespace:ScrollLoginTest;assembly=ScrollLoginTest">
     <ContentPage.Content BackgroundColor="{DynamicResource defaultBackgroundColor}">
         <ScrollView x:Name="LoginScrollView" BackgroundColor="{DynamicResource defaultBackgroundColor}">
-            <StackLayout Padding="40">
+            <StackLayout Padding="40" Spacing="150">
                     <local:CustomReturnEntry x:Name="Server"
                            VerticalOptions="End"
                            AutomationId="LoginView_Server"
