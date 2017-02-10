@@ -2,57 +2,32 @@
 <ContentPage x:Class="ScrollLoginTest.ScrollLoginTestPage"
              xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:local="clr-namespace:ScrollLoginTest">
+			xmlns:local="clr-namespace:ScrollLoginTest;assembly=ScrollLoginTest">
     <ContentPage.Content BackgroundColor="{DynamicResource defaultBackgroundColor}">
         <ScrollView x:Name="LoginScrollView" BackgroundColor="{DynamicResource defaultBackgroundColor}">
-            <StackLayout Orientation="Vertical" Padding="40">
-                <Grid VerticalOptions="CenterAndExpand">
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="60" />
-                        <RowDefinition Height="60" />
-                        <RowDefinition Height="60" />
-                    </Grid.RowDefinitions>
-                    <Entry x:Name="Server"
-                           Grid.Row="0"
-                           Grid.Column="0"
+            <StackLayout Padding="40">
+                    <local:CustomReturnEntry x:Name="Server"
                            VerticalOptions="End"
                            AutomationId="LoginView_Server"
                            Keyboard="Url"
                            Placeholder="Server"
                            Style="{DynamicResource regularEntry}" />
-                    <Entry x:Name="UserName"
-                           Grid.Row="1"
-                           Grid.Column="0"
+                    <local:CustomReturnEntry x:Name="UserName"
                            VerticalOptions="End"
                            AutomationId="LoginView_UserName"
                            Keyboard="Email"
                            Placeholder="UserName"
                            Style="{DynamicResource regularEntry}" />
-                    <Entry x:Name="Password"
-                           Grid.Row="2"
-                           Grid.Column="0"
+                    <local:CustomReturnEntry x:Name="Password"
                            VerticalOptions="End"
                            AutomationId="LoginView_Password"
                            IsPassword="true"
                            Placeholder="Password"
                            Style="{DynamicResource regularEntry}" />
-                </Grid>
-                <Grid VerticalOptions="EndAndExpand">
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="*" />
-                    </Grid.RowDefinitions>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width=".20*" />
-                        <ColumnDefinition Width=".6*" />
-                        <ColumnDefinition Width=".20*" />
-                    </Grid.ColumnDefinitions>
-                    <Button x:Name="LoginButton"
-                            Grid.Row="0"
-                            Grid.Column="1"
+				 <Button x:Name="LoginButton"
                             AutomationId="LoginView_SignIn"
                             Style="{DynamicResource blueButton}"
                             Text="SignIn" />
-                </Grid>
             </StackLayout>
         </ScrollView>
     </ContentPage.Content>
