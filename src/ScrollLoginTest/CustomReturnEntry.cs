@@ -11,12 +11,6 @@ namespace ScrollLoginTest
 	public class CustomReturnEntry : Entry
 	{
 		/// <summary>
-		/// Occurs when the user finalizes the text in an entry with the return key
-		/// </summary>
-		public static readonly BindableProperty ReturnCommandProperty =
-			BindableProperty.Create(nameof(ReturnCommand), typeof(ICommand), typeof(CustomReturnEntry), null);
-
-		/// <summary>
 		/// Return Type Property of the Entry
 		/// </summary>
 		public static readonly BindableProperty ReturnTypeProperty =
@@ -32,15 +26,6 @@ namespace ScrollLoginTest
 		{
 			get { return (ReturnType)GetValue(ReturnTypeProperty); }
 			set { SetValue(ReturnTypeProperty, value); }
-		}
-
-		/// <summary>
-		/// Invoke Completed event
-		/// </summary>
-		public ICommand ReturnCommand
-		{
-			get { return (ICommand)GetValue(ReturnCommandProperty); }
-			set { SetValue(ReturnCommandProperty, value); }
 		}
 	}
 
